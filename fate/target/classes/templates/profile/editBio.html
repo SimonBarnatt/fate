@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head> 
+
+
+<body>
+	<nav th:replace="layouts::navbar"></nav>
+	<div class="container">
+        <label>Please write a bio below</label>
+      <form action="/profile/editBio" method="post" th:object="${bio}">
+		<input type="hidden" th:field="${bio.userId}" value="${userIdNumber}">
+        <textarea th:field="${bio.bio}" cols="40" rows="5"></textarea></p>
+		<button type="submit" id="submitButton">Save</button>
+		
+	</div>
+	
+</body>
+
+</html>

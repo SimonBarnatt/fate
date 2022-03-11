@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head> 
+
+
+<body>
+	<nav th:replace="layouts::navbar"></nav>
+	<div class="container">
+        <label>hello</label>
+		
+      <form action="/login/saveNewSignUp" method="post" th:object="${newUser}">
+        <p>Email: <input type="text" th:field="${newUser.email}"></p>
+		<p>Password: <input type="text" th:field="${newUser.password}"></p>
+		<p>I have read and agree to the Terms & Conditions: <input type="checkbox" id="tAndCs" th:field="${newUser.termsAndConditionsAccepted}" th:value "true"></p>
+		<button type="submit" id="submitButton">Sign Up</button>
+		
+	</div>
+	<script>
+		function myFunction() {
+			let value = element.getAttributeNode("tAndCs").value;
+			var x = document.getElementById('submitButton');
+			if (value === 'true') {
+				x.style.visibility = 'visible';
+			} else {
+				x.style.visibility = 'hidden';
+			}
+		}
+		</script>
+</body>
+
+</html>

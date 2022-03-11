@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head> 
+
+
+<body>
+	<nav th:replace="layouts::navbar"></nav>
+	<div class="container">
+        <label>Welcome<br> Please fill out the information below</label>
+      <form action="/profile/createNewProfile" method="post" th:object="${newProfile}" >
+		<p> <input type="hidden" th:field="${newProfile.userIdNumber}" value="${userId}"></p>
+        <p>Display Name: <input type="text" th:field="${newProfile.displayName}"></p>
+		<p>Username: <input type="text" th:field="${newProfile.username}"></p>
+		<p>Date of birth <input type="date" id="dob" th:field="${newProfile.dateOfBirthString}"></p>
+		<button type="submit" id="submitButton">Save</button>
+		
+	</div>
+	
+</body>
+
+</html>

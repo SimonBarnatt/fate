@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::header"></head> 
+
+
+<body>
+	<nav th:replace="layouts::navbar"></nav>
+	<label>Working</label>
+	
+	<p th:text="${profile.displayName}">Welcome to our grocery store!</p>
+
+	
+	
+</body>
+
+</html>
